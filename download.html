@@ -67,7 +67,6 @@ Http.onreadystatechange = (e) => {
  fileName = "my-download.json"; 
  saveData(response, fileName); 
   
-</script> 
   
 // <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script> src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"</script>
@@ -94,7 +93,7 @@ var storage = firebase.storage();
 var storageRef = firebase.storage.ref();
 
 ref.put(fileName).then((snapshot) => {
-console.log('Uploaded a blob or file!");
+console.log("Uploaded a blob or file!");
             });
 
 </script> 
