@@ -104,7 +104,7 @@ var json = JSON.stringify(response);
   var database = firebase.database();
 
 function writeUserData(json) {
-  firebase.database().ref('users/' + "epic" ).set({
+  firebase.database().ref('jsonFile/' + "epic" ).set({
     jsonFile: json 
   });
 }  
