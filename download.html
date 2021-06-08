@@ -88,26 +88,20 @@ var json = JSON.stringify(response);
 
 // <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-<script> 
-  var config = {
-    apiKey: "AIzaSyDBLgVGA1l5GnMu1PZeDUBmS_Fyk1r4cL0",
-    authDomain: "stravaproject-211c5.firebaseapp.com",
-    // For databases not in the us-central1 location, databaseURL will be of the
-    // form https://[databaseName].[region].firebasedatabase.app.
-    // For example, https://your-database-123.europe-west1.firebasedatabase.app
-    databaseURL: "https://databaseName.firebaseio.com",
-    storageBucket: "stravaproject-211c5.appspot.com"
-  };
-  firebase.initializeApp(config);
+<script>
+  
+var firebaseConfig = {
+  apiKey: "AIzaSyDBLgVGA1l5GnMu1PZeDUBmS_Fyk1r4cL0",
+  authDomain: "stravaproject-211c5.firebaseapp.com",
+  databaseURL: "https://databaseName.firebaseio.com",
+  storageBucket: "stravaproject-211c5.appspot.com"
+};
+firebase.initializeApp(firebaseConfig);
 
-   Get a reference to the database service
-  var database = firebase.database();
+// Get a reference to the storage service, which is used to create references in your storage bucket
+var storage = firebase.storage();
 
-function writeUserData(json) {
-  firebase.database().ref('jsonFile/' + "epic" ).set({
-    jsonFile: json 
-  });
-}  
+ 
 
 
 </script> 
