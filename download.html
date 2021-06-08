@@ -17,7 +17,7 @@
 <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
 <script>
   
-  import firebase from "firebase/app";
+import firebase from "firebase/app";
 import "firebase/database";  
   
   
@@ -46,7 +46,6 @@ Http.send();
 
 //var refreshToken
 //var accessToken 
-var jsonFile 
 
 Http.onreadystatechange = (e) => {
   var response = Http.responseText
@@ -66,12 +65,12 @@ Http.onreadystatechange = (e) => {
     }; 
  }()); 
  
- var data = response 
+
  fileName = "my-download.json"; 
   
 
  
- saveData(data, fileName); 
+ saveData(response, fileName); 
 //var json = JSON.stringify(response);
 //var blob = new Blob([json], {type: "application/json"});
 //var url = URL.createObjectURL(blob);
