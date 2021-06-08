@@ -65,32 +65,14 @@ Http.onreadystatechange = (e) => {
  
 
  fileName = "my-download.json"; 
-  
-
- 
  saveData(response, fileName); 
-//var json = JSON.stringify(response);
-//var blob = new Blob([json], {type: "application/json"});
-//var url = URL.createObjectURL(blob);
-
- //var a = document.createElement('a');
- // a.download    = "backup.json";
- // a.href        = url;
- // a.textContent = "Download backup.json";
- // document.getElementById('content').appendChild(a);  
-
-
-// //  console.log(response)
-//   var startIndexRT = (response).search("refresh_token") + 16
-//   var endIndexRT = startIndexRT - 43
-//   refreshToken = (response).substr(startIndexRT,endIndexRT)
-//   console.log(refreshToken)
-}
-  </script> 
+  
+</script> 
+  
 // <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script> src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"</script>
 
-  <script>
+<script>
 
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -105,12 +87,10 @@ Http.onreadystatechange = (e) => {
     measurementId: "G-27LC16GYE3"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-
+firebase.initializeApp(firebaseConfig);
 
 // Get a reference to the storage service, which is used to create references in your storage bucket
-// var storage = firebase.storage();
+var storage = firebase.storage();
 var storageRef = firebase.storage.ref();
 
 ref.put(fileName).then((snapshot) => {
