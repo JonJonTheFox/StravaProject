@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Refresh" content="0; url='https://www.strava.com/oauth/authorize?client_id=60264&redirect_uri=http://127.0.0.1:5500/test.html&response_type=code&scope=activity:read_all'" />
+<title>JavaScript Automatic Page Redirect</title>
+<script>
+      function getURL() {
+        return window.location.href
+    }
+var URL = getURL()
+var code = ''
+if ((URL.search("code")) != -1) {
+    var startindex = URL.search("code") + 5
+    var endindex = startindex + 40
+    code = URL.substr(startindex, endindex)
+}
+  
+</script>
+    
+</head>
+<body>
+</body>
+</html>
