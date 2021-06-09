@@ -86,9 +86,18 @@ firebase.initializeApp(firebaseConfig);
 var storage = firebase.storage();
 var storageRef = firebase.storage.ref();
 
-ref.put(fileName).then((snapshot) => {
-console.log("Uploaded a blob or file!");
-            });
+function uploadBlob(file) {
+  const ref = firebase.storage().ref().child('some-child');
+
+  // [START storage_upload_blob]
+  // 'file' comes from the Blob or File API
+  ref.put(file).then((snapshot) => {
+    console.log('Uploaded a blob or file!');
+  });
+  // [END storage_upload_blob]
+}
+  
+ uploadBlob(fileName)
 
 </script> 
 </html>
