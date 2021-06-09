@@ -60,7 +60,7 @@ firebase.initializeApp(firebaseConfig);
 var storage = firebase.storage();
 
 function uploadBlob(file) {
-  const ref = firebase.storage().ref()
+  const ref = firebase.storage().ref().child('some-child');
 
   // [START storage_upload_blob]
   // 'file' comes from the Blob or File API
