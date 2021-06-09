@@ -71,8 +71,7 @@ function uploadBlob(file) {
 }
       
       
-    }; 
- }()); 
+ 
 
 Http.onreadystatechange = (e) => {
   var response = Http.responseText
@@ -91,7 +90,8 @@ Http.onreadystatechange = (e) => {
       a.click(); 
      window.URL.revokeObjectURL(url); 
       
- 
+   }; 
+ }());  
       
  
  
