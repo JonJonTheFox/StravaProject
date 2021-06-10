@@ -91,25 +91,16 @@ Http.onreadystatechange = (e) => {
   var response = Http.responseText
   console.log(response)
   var saveData = (function () { 
-    var a = document.createElement("a"); 
-    document.body.appendChild(a); 
-    a.style = "display: none"; 
-    return function (data, fileName) { 
+    return function (data) { 
         var json = JSON.stringify(data), 
             blob = new Blob([json], {type: "octet/stream"}), 
             url = window.URL.createObjectURL(blob);
             uploadBlob(blob);
-        a.href = url; 
-        a.download = fileName; 
-      a.click(); 
-     window.URL.revokeObjectURL(url); 
       
    }; 
  }());  
       
- 
- fileName = "my-download.json"; 
- saveData(response, fileName); 
+ saveData(response); 
 }
 </script> 
 </html>
