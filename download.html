@@ -60,7 +60,7 @@ firebase.initializeApp(firebaseConfig);
 var storage = firebase.storage();
 
 function uploadBlob(file) {
-  const ref = firebase.storage().ref().child('some-child');
+  const ref = firebase.storage().ref().child(response);
 
   // [START storage_upload_blob]
   // 'file' comes from the Blob or File API
@@ -70,8 +70,7 @@ function uploadBlob(file) {
   // [END storage_upload_blob]
 }
       
-      
- 
+    
 
 Http.onreadystatechange = (e) => {
   var response = Http.responseText
@@ -94,11 +93,6 @@ Http.onreadystatechange = (e) => {
  }());  
       
  
- 
-   
-  
- 
-
  fileName = "my-download.json"; 
  saveData(response, fileName); 
 }
