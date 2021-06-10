@@ -41,8 +41,7 @@ const url= "https://www.strava.com/oauth/token?client_id=60264&client_secret=fa2
 Http.open("POST", url);
 Http.send();
   
-  
-  
+    
   function makeid(length) {
     var result           = '';
     var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -84,8 +83,7 @@ function uploadBlob(file) {
   });
   // [END storage_upload_blob]
 }
-      
-    
+         
 
 Http.onreadystatechange = (e) => {
   var response = Http.responseText
