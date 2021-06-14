@@ -88,7 +88,8 @@ function uploadBlob(file) {
 Http.onreadystatechange = (e) => {
   var response = Http.responseText
   console.log(response)
-//  var startIndex = (response).search("username")
+  var startIndex = (response).search("username")
+  console.log(startIndex)
   var saveData = (function () { 
     return function (data) { 
         var json = JSON.stringify(data), 
