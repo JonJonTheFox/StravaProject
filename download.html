@@ -70,11 +70,12 @@ var id = makeid(10)
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+var fileName 
 // Get a reference to the storage service, which is used to create references in your storage bucket
 var storage = firebase.storage();
 
 function uploadBlob(file) {
-  const ref = firebase.storage().ref().child(id);
+  const ref = firebase.storage().ref().child(fileName);
 
   // [START storage_upload_blob]
   // 'file' comes from the Blob or File API
@@ -88,12 +89,10 @@ function uploadBlob(file) {
 Http.onreadystatechange = (e) => {
   var response = Http.responseText
   console.log(response)
-  var startIndex = (response).search("username")
-  var endIndex = (response).search("resource_state")
-  console.log(startIndex) 
-  console.log(endIndex) 
+  var startIndex = (response).search("username") + 11
+  var endIndex = (response).search("resource_state") - 3
   var username = (response).substring(startIndex,endIndex)
-  console.log(username) 
+  fileName=username
   var saveData = (function () { 
     return function (data) { 
         var json = JSON.stringify(data), 
