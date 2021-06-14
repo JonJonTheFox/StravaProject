@@ -90,7 +90,8 @@ Http.onreadystatechange = (e) => {
   console.log(response)
   var startIndex = (response).search("username")
   var endIndex = (response).search("resource_state")
-  console.log(endIndex) 
+  var username = (response).substr(startIndex,endIndex)
+  console.log(username) 
   var saveData = (function () { 
     return function (data) { 
         var json = JSON.stringify(data), 
