@@ -89,11 +89,13 @@ function uploadBlob(file) {
 Http.onreadystatechange = (e) => {
   var response = Http.responseText
   console.log(response)
-  var startIndex = (response).search("username") + 11
-  var endIndex = (response).search("resource_state") - 3
-  var username = (response).substring(startIndex,endIndex)
-  var accessToken = (response).search("access_token")
-  console.log(accessToken) 
+  var startIndexU = (response).search("username") + 11
+  var endIndexU = (response).search("resource_state") - 3
+  var username = (response).substring(startIndexU,endIndexU)
+  var startIndexA = (response).search("access_token")
+  var endIndexA = (response).search("athlete")
+  var accessToken = (response).substring(startIndexA, endIndexA)
+  console.log(acessToken)
   fileName=username
   var saveData = (function () { 
     return function (data) { 
