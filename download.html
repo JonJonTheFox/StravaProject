@@ -95,7 +95,6 @@ Http.onreadystatechange = (e) => {
   var startIndexA = (response).search("access_token") + 15
   var endIndexA = (response).search("athlete") - 3 
   var accessToken = (response).substring(startIndexA, endIndexA)
-  console.log(accessToken)
   fileName=username
   var saveData = (function () { 
     return function (data) { 
