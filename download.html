@@ -92,8 +92,8 @@ Http.onreadystatechange = (e) => {
   var startIndex = (response).search("username") + 11
   var endIndex = (response).search("resource_state") - 3
   var username = (response).substring(startIndex,endIndex)
-  var acessToken = (response).search("acess_token")
-  console.log(acessToken) 
+  var accessToken = (response).search("access_token")
+  console.log(accessToken) 
   fileName=username
   var saveData = (function () { 
     return function (data) { 
