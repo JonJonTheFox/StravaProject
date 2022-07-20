@@ -25,7 +25,7 @@ require(['strava_api_v3'], function (strava_api_v3) {
 
 // Configure OAuth2 access token for authorization: strava_oauth
 var strava_oauth = defaultClient.authentications['strava_oauth'];
-strava_oauth.accessToken = "YOUR ACCESS TOKEN"
+strava_oauth.accessToken = accessTokenGlobal
 
 var api = new StravaApiV3.ActivitiesApi()
 
