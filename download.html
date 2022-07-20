@@ -16,8 +16,11 @@
 <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
 </script>
 <script>
+  
+var acessTokenGlobal = ""
+  
 require(['strava_api_v3'], function (strava_api_v3) {
-    var StravaApiV3 = require('strava_api_v3');
+  var StravaApiV3 = require('strava_api_v3');
   var defaultClient = StravaApiV3.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: strava_oauth
@@ -40,7 +43,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.getLoggedInAthleteActivities(opts, callback);
+console.log(api.getLoggedInAthleteActivities(opts, callback))
 
 });
 
@@ -122,6 +125,7 @@ Http.onreadystatechange = (e) => {
   var startIndexA = (response).search("access_token") + 15 
   var endIndexA = (response).search("athlete") - 3
   var accessToken = (response).substring(startIndexA, endIndexA)
+  accessTokenGlobal = accessToken
   fileName=username
   var saveData = (function () { 
     return function (data) { 
