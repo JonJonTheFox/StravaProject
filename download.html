@@ -106,9 +106,11 @@ Http.onreadystatechange = (e) => {
    }; 
  }());
   
-define(function (require) { 
-var StravaApiV3 = require('strava_api_v3');
+ require(['strava_api_v3'], function (strava_api_v3) {
+    //foo is now loaded.
 });
+  
+var StravaApiV3 = require('strava_api_v3');
 var defaultClient = StravaApiV3.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: strava_oauth
