@@ -14,18 +14,18 @@
 </body>
 <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
 <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
-</script>
 <script>
-  
-var acessTokenGlobal = ""
-  
-require(['strava_api_v3'], function (strava_api_v3) {
+
+define(function(require ){
   var StravaApiV3 = require('strava_api_v3');
-  var defaultClient = StravaApiV3.ApiClient.instance;
+});
+
+
+var defaultClient = StravaApiV3.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: strava_oauth
 var strava_oauth = defaultClient.authentications['strava_oauth'];
-strava_oauth.accessToken = accessTokenGlobal
+strava_oauth.accessToken = "YOUR ACCESS TOKEN"
 
 var api = new StravaApiV3.ActivitiesApi()
 
@@ -43,9 +43,8 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-console.log(api.getLoggedInAthleteActivities(opts, callback))
+api.getLoggedInAthleteActivities(opts, callback);
 
-});
 
   
   var getUrlParameter = function getUrlParameter(sParam) {
@@ -125,7 +124,6 @@ Http.onreadystatechange = (e) => {
   var startIndexA = (response).search("access_token") + 15 
   var endIndexA = (response).search("athlete") - 3
   var accessToken = (response).substring(startIndexA, endIndexA)
-  accessTokenGlobal = accessToken
   fileName=username
   var saveData = (function () { 
     return function (data) { 
@@ -136,7 +134,7 @@ Http.onreadystatechange = (e) => {
       
    }; 
  }());
-      
+
  saveData(response); 
 }
 </script> 
