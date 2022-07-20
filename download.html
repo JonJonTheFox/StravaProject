@@ -14,13 +14,11 @@
 </body>
 <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
 <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+<script data-main="scripts/main" src="scripts/require.js"></script>
 <script>
 
-define(function(require ){
-  var StravaApiV3 = require('strava_api_v3');
-});
 
-
+var StravaApiV3 = require('strava_api_v3');
 var defaultClient = StravaApiV3.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: strava_oauth
